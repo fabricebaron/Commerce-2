@@ -19,18 +19,36 @@
   </head>
 
   <body>
-    <main class="container mx-auto mt-28 px-5 flex">
+    <main class="flex">
         <nav class="flex w-full">
             <div class="w-64 p-4 h-screen bg-gray-600 sticky top-0">
                 <div class="flex">
                 <%= image_tag 'logo.png', class: 'w-16' %>
-                <h1 class="text-md py-2 text-gray-50 font-bold hidden md:block">Commerce Admin</h1>
+                <h1 class="text-md py-2 text-gray-50 font-bold hidden md:block ml-2">Commerce Admin</h1>
                 </div>
                 <ul class="flex flex-col text-gray-50">
                     <li>
-                    
+                    <%= link_to admin_path, class: "block px-4 py-2 hover:rounded hover:bg-gray-700" do %>
+                      <%= icon('fa-solid', 'gauge-high') %><span class="hidden md:inline-block ml-2">Dashboard</span>
+                    <% end %>
+                    </li>
+                    <li>
+                    <%= link_to admin_path, class: "block px-4 py-2 hover:rounded hover:bg-gray-700" do %>
+                      <%= icon('fa-solid', 'cart-shopping') %><span class="hidden md:inline-block ml-2">Produit</span>
+                    <% end %>
+                    </li>
+                    <li>
+                    <%= link_to admin_path, class: "block px-4 py-2 hover:rounded hover:bg-gray-700" do %>
+                      <%= icon('fa-solid', 'list') %><span class="hidden md:inline-block ml-2">Categories</span>
+                    <% end %>
+                    </li>
+                    <li>
+                    <%= link_to admin_path, class: "block px-4 py-2 hover:rounded hover:bg-gray-700" do %>
+                      <%= icon('fa-solid', 'truck-fast') %><span class="hidden md:inline-block ml-2">Orders</span>
+                    <% end %>
+                    </li>
+                </ul>
             </div>
-
         </nav>
       <%= yield %>
     </main>
